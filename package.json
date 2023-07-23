@@ -10,8 +10,14 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "next": "^13.4.10",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^4.0.3",
+    "next": "^13.4.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "tailwind-merge": "^1.14.0",
+    "zod": "^3.21.4",
+    "zustand": "^4.3.9"
   }
 }

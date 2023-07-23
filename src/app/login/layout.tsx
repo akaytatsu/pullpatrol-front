@@ -1,5 +1,4 @@
-import Menu from "@/components/menu/Menu";
-import "./globals.css";
+import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -17,10 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
-        <Menu></Menu>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
