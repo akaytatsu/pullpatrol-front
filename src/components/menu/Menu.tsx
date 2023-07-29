@@ -16,6 +16,7 @@ const Menu = () => {
         icon={<Cog6ToothIcon />}
         text="settings"
         routerTo="/settings"
+        baseurl="settings"
       />
     </div>
   );

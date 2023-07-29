@@ -1,16 +1,13 @@
 "use client";
-import config from "@/common/config";
 import type { AxiosResponse } from "axios";
-import { useRouter } from "next/navigation";
 
 export default function handleResponse(response: AxiosResponse): any {
   const statusCode = response ? response.status : 500;
   const data = response ? response.data : [];
   const status = statusCode >= 200 && statusCode < 300 ? "success" : "error";
-  // const router = useRouter();
 
   if (statusCode === 401) {
-    window.location.href = "/login"
+    window.location.href = "/login";
   }
 
   const ERRORS = {
