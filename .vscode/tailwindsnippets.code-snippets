@@ -15,6 +15,41 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"React: reactc": {
+		"scope": "javascriptreact,typescriptreact,tsx,html",
+		"prefix": "reactc",
+		"body": [
+			"const $1 = () => {",
+			"return (",
+			"<div className='$2'>",
+			"</div>",
+			");",
+			"};",
+			"",
+			"export default $1;"
+		],
+		"description": "React reactc"
+	},
+	"React: reacts": {
+		"scope": "javascriptreact,typescriptreact,tsx,html",
+		"prefix": "reacts",
+		"body": [
+			"interface $1Props {",
+			"children: React.ReactNode;",
+			"}",
+			"",
+			"const $1 = ({children} : $1Props) => {",
+			"return (",
+			"<div className='$2'>",
+			"{children}",
+			"</div>",
+			");",
+			"};",
+			"",
+			"export default $1;"
+		],
+		"description": "React reacts"
+	},
 	"TailwindCSS: div": {
 		"scope": "javascriptreact,typescriptreact,tsx,html",
 		"prefix": "div",

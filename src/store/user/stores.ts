@@ -14,7 +14,7 @@ export const useUserLogin = create<IUserLogin>()((set, get) => ({
 
     const schema = z.object({
       email: z.string().email(),
-      password: z.string().min(6),
+      password: z.string().min(4),
     });
 
     const result = schema.safeParse({

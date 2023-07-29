@@ -4,16 +4,16 @@ import { twMerge } from "tailwind-merge";
 interface ButtonProps {
   text: string;
   onClick?: () => void;
-  children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
   isLoading?: boolean;
+  icon?: React.ReactElement;
 }
 
 const Button = ({
   text,
   onClick,
-  children,
+  icon,
   className,
   disabled = false,
   isLoading = false,
@@ -30,7 +30,7 @@ const Button = ({
     <a
       onClick={isLoading || disabled ? () => {} : onClick}
       className={twMerge(
-        " text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:cursor-pointer",
+        "text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center hover:cursor-pointer flex flex-row w-max",
         className,
         isLoadingClass,
         disabledClass
@@ -38,13 +38,13 @@ const Button = ({
     >
       {isLoading && (
         <div className="flex flex-row justify-center">
-          <ArrowPathIcon className="w-6 h-6 animate-spin animat text-gray-400" />
+          <ArrowPathIcon className="w-6 h-6 text-gray-400 animate-spin animat" />
         </div>
       )}
       {!isLoading && (
         <>
+          {icon && <div className="w-4 h-4 mr-2">{icon}</div>}
           {text}
-          {children}
         </>
       )}
     </a>

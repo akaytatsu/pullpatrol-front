@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
     "tailwind-merge": "^1.14.0",
+    "tailwind-variants": "^0.1.13",
     "zod": "^3.21.4",
     "zustand": "^4.3.9"
   }
