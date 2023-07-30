@@ -9,6 +9,7 @@ const SubMenu = () => {
       <div className="w-full px-4 mt-8 space-y-2">
         <SeubMenuItem text="Users" routerTo="/settings/users" />
         <SeubMenuItem text="Repositories" routerTo="/settings/repositories" />
+        <SeubMenuItem text="Notifications" routerTo="/settings/notifications" />
       </div>
     </div>
   );

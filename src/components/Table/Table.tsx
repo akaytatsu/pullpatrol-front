@@ -18,7 +18,7 @@ const Table = ({
   return (
     <table className={twMerge("table-auto text-black w-full", classNameTable)}>
       <thead>
-        <tr className={twMerge("text-sm font-normal", classNameTHead)}>
+        <tr className={twMerge("text-xs font-normal", classNameTHead)}>
           {headers.map((header: string, index: number) => (
             <th
               key={index}

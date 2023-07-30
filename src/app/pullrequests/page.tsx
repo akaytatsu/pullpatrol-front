@@ -1,5 +1,6 @@
 import Button from "@/components/Button/Button";
-import Content from "@/components/Content/Content";
+import ContentFooter from "@/components/Content/Footer";
+import Content from "@/components/Content/Root";
 import RepoMark from "@/components/RepoMark/RepoMark";
 import Status from "@/components/Status/Status";
 import { Table, TableItem, TableLine } from "@/components/Table";
@@ -30,7 +31,7 @@ const Page = () => {
               </div>
             </TableItem>
             <TableItem>
-              <Status status="pending" />
+              <Status>pending</Status>
             </TableItem>
             <TableItem className="items-center space-y-2">
               <UserLine />
@@ -42,6 +43,7 @@ const Page = () => {
             </TableItem>
           </TableLine>
         </Table>
+        <ContentFooter>asdsad</ContentFooter>
       </Content>
     </div>
   );

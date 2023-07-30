@@ -1,4 +1,4 @@
-import Content from "@/components/Content/Content";
+import Content from "@/components/Content/Root";
 import Title from "@/components/Title/Title";
 
 const Page = () => {

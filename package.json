@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudscape-design/components": "^3.0.348",
     "@heroicons/react": "^2.0.18",
     "mobx": "^6.10.0",
     "mobx-react-lite": "^4.0.3",
