@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/Button/Button";
 import ContentFooter from "@/components/Content/Footer";
 import Content from "@/components/Content/Root";
@@ -6,9 +7,17 @@ import Status from "@/components/Status/Status";
 import { Table, TableItem, TableLine } from "@/components/Table";
 import Title from "@/components/Title/Title";
 import UserLine from "@/components/UserLine/UserLine";
+import { useRepositoriesStore } from "@/store/repositories/stores";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
 
 const Page = () => {
+  const useRepositories = useRepositoriesStore();
+
+  useEffect(() => {
+    useRepositories.getRepositories();
+  }, []);
+
   return (
     <div className="flex flex-col">
       <Title>PullRequests</Title>

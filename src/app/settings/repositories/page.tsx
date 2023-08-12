@@ -1,14 +1,34 @@
 "use client";
 import Content from "@/components/Content";
-import Title from "@/components/Title/Title";
+import { useRepositoriesStore } from "@/store/repositories/stores";
+import Button from "@cloudscape-design/components/button";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import FiltersPage from "./filters";
 import TablePage from "./table";
 
 const Page = () => {
+  const useRepositories = useRepositoriesStore();
+  const router = useRouter();
+
+  useEffect(() => {
+    useRepositories.getRepositories();
+  }, []);
+
   return (
     <div className="flex flex-col">
-      <Title>Repositories</Title>
-      <Content.Root className="mt-7" title="Repositories list">
+      <div className="flex flex-row justify-between w-full"></div>
+      <Content.Root
+        className="mt-7"
+        title="Repositories list"
+        action={
+          <div className="flex flex-row justify-end">
+            <Button onClick={() => router.push("/settings/repositories/add")}>
+              ADD
+            </Button>
+          </div>
+        }
+      >
         <Content.Header>
           <FiltersPage />
         </Content.Header>

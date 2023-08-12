@@ -1,3 +1,4 @@
+import githubIcon from "@/../public/images/logos/github.svg";
 import Image from "next/image";
 
 interface RepoMarkProps {
@@ -13,7 +14,7 @@ const RepoMark = ({ url }: RepoMarkProps) => {
     <div className="flex flex-col">
       <div className="flex flex-row items-center">
         <Image
-          src={"/images/logos/github.png"}
+          src={githubIcon}
           alt="Github logo"
           width={8}
           height={8}

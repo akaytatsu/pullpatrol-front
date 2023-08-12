@@ -6,7 +6,10 @@ interface FooterProps {
 }
 
 const Footer = ({ children, className }: FooterProps) => {
-  const dataClass = twMerge("flex w-full border-t border-gray-200", className);
+  const dataClass = twMerge(
+    "flex w-full border-t border-gray-200 pt-3",
+    className
+  );
 
   return <div className={dataClass}>{children}</div>;
 };
