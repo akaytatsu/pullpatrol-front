@@ -1,16 +1,28 @@
 "use client";
 
 import Content from "@/components/Content";
-import { Button } from "@cloudscape-design/components";
+import { useRepositoryFormStore } from "@/store/repositories/stores";
+import { useEffect } from "react";
 import RepoForm from "../formComponent";
 
-const Page = () => {
+interface PageProps {
+  params: {
+    id: number;
+  };
+}
+
+const Page = ({ params }: PageProps) => {
+  const useStore = useRepositoryFormStore();
+
+  useEffect(() => {
+    if (params.id) {
+      useStore.fetchRepository(params.id);
+    }
+  }, []);
+
   return (
     <Content.Root className="mt-7" title="Edit repository">
       <RepoForm />
-      <Content.Footer className="justify-end">
-        <Button variant="link">voltar</Button>
-      </Content.Footer>
     </Content.Root>
   );
 };

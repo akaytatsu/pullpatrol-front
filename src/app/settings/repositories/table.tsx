@@ -1,14 +1,17 @@
-import githubIcon from "@/../public/images/logos/bitbucket.svg";
 import Button from "@/components/Button/Button";
+import GitIcon from "@/components/GitIcon/GitIcon";
 import RepoMark from "@/components/RepoMark/RepoMark";
 import Status from "@/components/Status/Status";
 import { Table, TableItem, TableLine } from "@/components/Table";
+import { formatDate } from "@/lib/utils";
 import { useRepositoriesStore } from "@/store/repositories/stores";
 import { IRepository } from "@/store/repositories/types";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const showTableData = (data: IRepository[]) => {
+  const router = useRouter();
+
   if (data.length == 0) {
     return (
       <TableLine>
@@ -19,34 +22,26 @@ const showTableData = (data: IRepository[]) => {
     );
   }
 
-  return <></>;
-
   return data.map((repo) => (
     <TableLine>
       <TableItem>
-        <p>Label</p>
+        <p>{repo.label}</p>
       </TableItem>
       <TableItem>
         <div className="space-y-1">
           <p className="text-xs">
-            <RepoMark url="https://github.com/akaytatsu/pullpatrol-back/pull/1" />
+            <RepoMark url={repo.repository} />
           </p>
         </div>
       </TableItem>
       <TableItem className="flex flex-col items-center justify-center">
         <p className="text-xs">
-          <Image
-            src={githubIcon}
-            alt="Github logo"
-            width={16}
-            height={16}
-            className="w-5 h-5"
-          />
+          <GitIcon size={16} driver={repo.driver} />
         </p>
-        <p className="mt-1 text-xs">GITHUB</p>
+        <p className="mt-1 text-xs">{repo.driver}</p>
       </TableItem>
       <TableItem>
-        <p className="text-sm">2023-07-27</p>
+        <p className="text-sm">{formatDate(repo.created_at)}</p>
         <p className="text-xs">Created At</p>
       </TableItem>
       <TableItem>
@@ -55,11 +50,16 @@ const showTableData = (data: IRepository[]) => {
       </TableItem>
       <TableItem>
         <div className="justi">
-          <Status variation="green">active</Status>
+          {repo.active && <Status variation="green">active</Status>}
+          {!repo.active && <Status variation="red">inactive</Status>}
         </div>
       </TableItem>
       <TableItem>
-        <Button text="Details" icon={<PencilSquareIcon />} />
+        <Button
+          text="Details"
+          icon={<PencilSquareIcon />}
+          onClick={() => router.push("/settings/repositories/" + repo.id)}
+        />
       </TableItem>
     </TableLine>
   ));

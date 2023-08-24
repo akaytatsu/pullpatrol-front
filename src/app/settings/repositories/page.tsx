@@ -1,10 +1,9 @@
 "use client";
 import Content from "@/components/Content";
 import { useRepositoriesStore } from "@/store/repositories/stores";
-import Button from "@cloudscape-design/components/button";
+import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import FiltersPage from "./filters";
 import TablePage from "./table";
 
 const Page = () => {
@@ -29,9 +28,7 @@ const Page = () => {
           </div>
         }
       >
-        <Content.Header>
-          <FiltersPage />
-        </Content.Header>
+        <Content.Header>{/* <FiltersPage /> */}</Content.Header>
         <TablePage />
         <Content.Footer></Content.Footer>
       </Content.Root>

@@ -1,11 +1,10 @@
 "use client";
 import Filters from "@/components/Filters";
-import { FormField, Input, Select } from "@cloudscape-design/components";
 
 const FiltersPage = () => {
   return (
     <Filters.BaseFilterContent>
-      <FormField label="search">
+      {/* <FormField label="search">
         <Input value={""} type="search" />
       </FormField>
       <FormField label="role">
@@ -27,7 +26,7 @@ const FiltersPage = () => {
             { label: "Inactive", value: "3" },
           ]}
         />
-      </FormField>
+      </FormField> */}
     </Filters.BaseFilterContent>
   );
 };

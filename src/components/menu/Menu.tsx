@@ -15,7 +15,7 @@ const Menu = () => {
       <MenuOption
         icon={<Cog6ToothIcon />}
         text="settings"
-        routerTo="/settings"
+        routerTo="/settings/repositories"
         baseurl="settings"
       />
     </div>

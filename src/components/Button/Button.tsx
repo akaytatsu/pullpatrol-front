@@ -30,7 +30,7 @@ const Button = ({
     <a
       onClick={isLoading || disabled ? () => {} : onClick}
       className={twMerge(
-        "text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center hover:cursor-pointer flex flex-row w-max",
+        "text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none text-black focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center hover:cursor-pointer flex flex-row w-max",
         className,
         isLoadingClass,
         disabledClass

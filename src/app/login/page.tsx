@@ -7,7 +7,7 @@ interface ErrorMessageProps {
 }
 
 const ErrorMessage = ({ message }: ErrorMessageProps) => (
-  <span className="text-red-400 self-center text-sm mt-1">{message}</span>
+  <span className="self-center mt-1 text-sm text-red-400">{message}</span>
 );
 
 const Page = () => {
@@ -21,7 +21,7 @@ const Page = () => {
         </a>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <form className="space-y-4 md:space-y-3 flex flex-col">
+            <form className="flex flex-col space-y-4 md:space-y-3">
               <div className="flex flex-col">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Your email
@@ -37,7 +37,7 @@ const Page = () => {
                   message={storeUserLogin.formValidated?.email?._errors}
                 />
               </div>
-              <div className=" flex flex-col">
+              <div className="flex flex-col ">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Password
                 </label>
